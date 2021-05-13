@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>主页</title>
+		<meta charset="utf-8" />
+		<title></title>
 	</head>
-	<body style="text-align: center;margin-top: 60px;"text="#f00000">
-		<h1>归家</h1>
-		<h2>杜牧</h2>
-		<p>稚子牵衣问，归来何太迟？</p>
-		<p>共谁争岁月，赢得鬓边丝？<p>
+	<body>
+		<script src="js/vue.js"></script>
+		<div id="app">
+			<h5>请输入任意字符，将会显示ASCII码：</h4>
+			<input type="text"v-model="userKey" @keydown.enter="show()" />
+		</div>
+		<script type="text/javascript">
+			var v=new Vue({
+				el:'#app',
+				data:{
+					userKey:""
+				},
+				methods:{
+					 show(){
+						 alert(this.userKey+"的ASCII码为："+v.userKey.charCodeAt());
+					 }
+				}
+			})
+		</script>
 	</body>
 </html>
